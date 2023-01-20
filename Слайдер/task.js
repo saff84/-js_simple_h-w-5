@@ -10,32 +10,28 @@ arrow.forEach((element) => {
             if (index === 0) {
                 index = slide.length - 1;
                 dropActivity();
-                next(index);
+                move(index);
             } else index--;
 
             dropActivity();
-            prev(index);
+            move(index);
         }
 
         if (element.classList.contains("slider__arrow_next")) {
             if (index === slide.length - 1) {
-                next(index);
+                move(index);
                 dropActivity();
                 index = 0;
 
             } else index++;
 
             dropActivity();
-            next(index);
+            move(index);
         }
     }
 })
 
-function prev(index) {
-    slide[index].classList.add("slider__item_active");
-}
-
-function next(index) {
+function move(index) {
     slide[index].classList.add("slider__item_active");
 }
 
@@ -48,6 +44,6 @@ function dropActivity() {
 dots.forEach((e, i)=>{
     e.onclick = function() {
         dropActivity()
-        prev(i)
+        move(i)
     }
 })
