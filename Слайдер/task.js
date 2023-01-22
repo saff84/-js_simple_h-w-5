@@ -33,12 +33,16 @@ arrow.forEach((element) => {
 
 function move(index) {
     slide[index].classList.add("slider__item_active");
+    dots[index].classList.add("slider__dot_active")
 }
 
 function dropActivity() {
     slide.forEach((el) => {
         el.classList.remove("slider__item_active");
     });
+    dots.forEach((el) => {
+        el.classList.remove("slider__dot_active");
+    })
 }
 
 dots.forEach((e, i)=>{
